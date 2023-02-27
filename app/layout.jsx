@@ -22,6 +22,7 @@ export default function RootLayout({
 <QueryWrapper>
 
         <Nav/>
+      
         {children}
 </QueryWrapper>
         
