@@ -12,10 +12,10 @@ export default async function handler(
 
 if (req.method === "POST") {
     const session = await getServerSession(req, res, authOptions)
-    console.log("This is the sessoin", session)
+
     if (!session) return res.status(401).json({message:"Please Sign in"})
     const prismaUser = await prisma.user.findUnique({
-        where:{email: session?.user?.email},
+        where:{email: session?.user?.email as string} ,
     })
     try {
     //  ADD COMMENT
@@ -29,9 +29,9 @@ const result = await prisma.comment.create({
         message: title,
         userId: prismaUser?.id,
         postId,
-    },
+    } as any,
 })
-console.log(" looking for post comment",result)
+
 res.status(200).json(result)
     } catch (err) {
       res.status(403).json({ err: "Error has occured while deleting post " })

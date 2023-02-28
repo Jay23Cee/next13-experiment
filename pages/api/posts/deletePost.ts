@@ -12,7 +12,7 @@ export default async function handler(
 
 if (req.method === "DELETE") {
     const session = await getServerSession(req, res, authOptions)
-    console.log("This is the sessoin", session)
+
     if (!session) return res.status(401).json({message:"Please Sign in"})
     try {
       // Delete a post

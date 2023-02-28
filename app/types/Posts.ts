@@ -12,6 +12,11 @@ export type PostType = {
         postId:string
         userId:string
         message:string
+        user?:{
+            name?:string
+            id?:string
+            image?:string
+        }
 
     }[]
 }

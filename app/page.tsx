@@ -21,7 +21,7 @@ const {data,error, isLoading} = useQuery<PostType[]>({
 })
 if (error)return error
 if (isLoading) return "Loading..."
-console.log(data)
+
   return (
  <main>
 <AddPost/>

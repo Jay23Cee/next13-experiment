@@ -8,17 +8,19 @@ import { useMutation, useQueryClient } from "@tanstack/react-query"
 import toast from "react-hot-toast"
 import axios from "axios"
 // import { motion } from "nexus/framer-motion"
-
+interface Comment {
+  id: string;
+  postId: string;
+  userId: string;
+  createdAt?: string;
+  title?: string;
+}
 type EditProps={
     id:string
     avatar:string
     name: string 
     title: string
-    comment: {
-        id: string 
-        postId: string 
-        userId: string
-    }[]
+    comment?: Comment[]
 }
 
 export default function EditPost({avatar,name,title,comment,id}: EditProps) {
@@ -36,7 +38,7 @@ export default function EditPost({avatar,name,title,comment,id}: EditProps) {
           console.log(error)
         },
          onSuccess: (data: any) => {
-          console.log(data)
+  
        queryClient.invalidateQueries(["auth-posts"])
           toast.success("Post has been deleted.", { id: deleteToastID })
         },

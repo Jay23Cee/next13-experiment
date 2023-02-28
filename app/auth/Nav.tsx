@@ -8,7 +8,7 @@ import {authOptions} from "../../pages/api/auth/[...nextauth]"
 
 export default async function Nav() {
   const session = await getServerSession(authOptions)
-  console.log(session)
+
 
 
   return (

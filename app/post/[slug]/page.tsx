@@ -26,7 +26,7 @@ export default function PostDetail(url: URL) {
     queryFn: () => fetchDetails(url.params.slug),
   })
   if (isLoading) return "Loading"
-  console.log(data)
+
   return (
     <div>
       <Post
@@ -49,7 +49,7 @@ export default function PostDetail(url: URL) {
             <Image
               width={24}
               height={24}
-              src={comment.user?.image}
+              src={comment.user?.image as string} 
               alt="avatar"
             />
             <h3 className="font-bold">{comment?.user?.name}</h3>
