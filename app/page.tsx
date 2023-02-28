@@ -1,9 +1,9 @@
 
 'use client'
 import axios from "axios"
-import AddPost from "./posts/AddPost"
+import AddPost from "./components/AddPost"
 import { useQuery } from "@tanstack/react-query"
-import Post from "./posts/Post"
+import Post from "./components/Post"
 import { PostType } from "./types/Posts"
 
 
@@ -27,7 +27,7 @@ console.log(data)
 <AddPost/>
 {data?.map((post)=>( 
   <Post 
-  Comment={post.Comment}
+  comment={post.comment}
   key={post.id} 
   name={post.user.name} 
   avatar={post.user.image} 

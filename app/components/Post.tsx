@@ -5,7 +5,7 @@ import Link from "next/link"
 
 import React from 'react'
 
-export default function Post({avatar,name,postTitle, id, Comment}) {
+export default function Post({avatar,name,postTitle, id, comment}:any) {
   return (
     <div className="bg-white my-8 p-8 rounded-lg">
         <div className="flex items-ceter  gap-2">
@@ -25,7 +25,7 @@ export default function Post({avatar,name,postTitle, id, Comment}) {
 <div className="flex gap-3 cursor-pointer items-center">
 
     <Link href={`/post/${id}`}>
-    <p className="text-sm font-bold text-gray-700">{Comment?.length}Comments</p>
+    <p className="text-sm font-bold text-gray-700">{comment?.length} Comments</p>
     </Link>
 </div>
     </div>
