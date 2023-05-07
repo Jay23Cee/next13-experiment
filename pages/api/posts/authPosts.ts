@@ -8,6 +8,7 @@ export default async function handler(
   req: NextApiRequest,
   res: NextApiResponse
 ) {
+  
 //   if (req.method === "GET") {
 //     const session = await getServerSession(req, res, authOptions)
 //     if (!session) {
@@ -65,7 +66,7 @@ if (req.method === "GET") {
 
       return res.status(200).json(data)
     } catch (err) {
-      res.status(403).json({ err: "Error has occured while making a post " })
+      res.status(403).json({ err: "Error has occurred while making a post " })
     }
   }
 }

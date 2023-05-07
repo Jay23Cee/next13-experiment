@@ -1,0 +1,11 @@
+version: '3'
+services:
+  app:
+    build: .
+    ports:
+      - '3000:3000'
+    environment:
+      DATABASE_URL: postgresql://postgres:CSz1V2Wei3APNwviHkKI@containers-us-west-92.railway.app:7495/railway
+      GOOGLE_CLIENT_ID: 141592513918-8u29id07fg8acfud9l9pqjcfsqlpbjmp.apps.googleusercontent.com
+      GOOGLE_CLIENT_SECRET: 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
+      AUTH_SECRET: XSUPERSECRETX23DFADFDAFADFADF
