@@ -24,7 +24,7 @@ export default function Logged({image}: User) {
     priority
      />
    </Link>
-   <Link href={"/dashboard"}><h1>Dashboard</h1></Link>
+   <Link href={"/dashboard"}><h1>My Activity</h1></Link>
    
    </li>
   )
