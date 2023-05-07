@@ -1,5 +1,4 @@
 import prisma from "../../../prisma/client"
-
 import type { NextApiRequest, NextApiResponse } from "next"
 
 export default async function handler(
@@ -8,7 +7,6 @@ export default async function handler(
 ) {
   if (req.method === "GET") {
    
-    //getPost
     try {
       const result = await prisma.post.findMany({
         include:{
@@ -18,10 +16,11 @@ export default async function handler(
         orderBy:{
             createdAt: "desc",
         },
-      })
-      res.status(200).json(result)
-    } catch (err) {
-      res.status(403).json({ err: "Error while fetching data" })
+      });
+      res.status(200).json(result);
+    } catch (error) {
+      console.error("Error while fetching posts:", error);
+      res.status(500).json({ error: "Unable to fetch posts. Please try again later." });
     }
   }
 }
